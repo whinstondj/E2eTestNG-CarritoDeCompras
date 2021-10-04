@@ -2,35 +2,42 @@
 <testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6326" started-at="2021-10-02T23:25:38 COT" finished-at="2021-10-02T23:25:44 COT">
+  <suite name="Suite" duration-ms="22896" started-at="2021-10-03T22:03:07 COT" finished-at="2021-10-03T22:03:30 COT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6326" started-at="2021-10-02T23:25:38 COT" finished-at="2021-10-02T23:25:44 COT">
+    <test name="Casos de Prueba Carrito de Compras" duration-ms="22896" started-at="2021-10-03T22:03:07 COT" finished-at="2021-10-03T22:03:30 COT">
       <class name="testcases.CasosCarrito">
-        <test-method status="PASS" signature="AbrirNavegador()[pri:0, instance:testcases.CasosCarrito@16c069df]" name="AbrirNavegador" is-config="true" duration-ms="3037" started-at="2021-10-02T23:25:35 COT" finished-at="2021-10-02T23:25:38 COT">
+        <test-method status="PASS" signature="AbrirNavegador(org.testng.ITestContext)[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="AbrirNavegador" is-config="true" duration-ms="6956" started-at="2021-10-03T22:03:00 COT" finished-at="2021-10-03T22:03:07 COT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@47289387]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AbrirNavegador -->
-        <test-method status="PASS" signature="elegirArticulosAzarCarritoCompras()[pri:0, instance:testcases.CasosCarrito@16c069df]" name="elegirArticulosAzarCarritoCompras" duration-ms="85" started-at="2021-10-02T23:25:38 COT" finished-at="2021-10-02T23:25:38 COT">
+        <test-method status="PASS" signature="elegirArticulosAzarCarritoCompras()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="elegirArticulosAzarCarritoCompras" duration-ms="95" started-at="2021-10-03T22:03:07 COT" finished-at="2021-10-03T22:03:08 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elegirArticulosAzarCarritoCompras -->
-        <test-method status="PASS" signature="anadirProductosAlCarrito()[pri:0, instance:testcases.CasosCarrito@16c069df]" name="anadirProductosAlCarrito" duration-ms="5252" started-at="2021-10-02T23:25:38 COT" depends-on-methods="testcases.CasosCarrito.elegirArticulosAzarCarritoCompras" finished-at="2021-10-02T23:25:44 COT">
+        <test-method status="PASS" signature="anadirProductosAlCarrito()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="anadirProductosAlCarrito" duration-ms="22060" started-at="2021-10-03T22:03:08 COT" depends-on-methods="testcases.CasosCarrito.elegirArticulosAzarCarritoCompras" finished-at="2021-10-03T22:03:30 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- anadirProductosAlCarrito -->
-        <test-method status="FAIL" signature="verificarProductos()[pri:0, instance:testcases.CasosCarrito@16c069df]" name="verificarProductos" duration-ms="930" started-at="2021-10-02T23:25:44 COT" depends-on-methods="testcases.CasosCarrito.anadirProductosAlCarrito" finished-at="2021-10-02T23:25:44 COT">
+        <test-method status="FAIL" signature="verificarProductos()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="verificarProductos" duration-ms="224" started-at="2021-10-03T22:03:30 COT" depends-on-methods="testcases.CasosCarrito.anadirProductosAlCarrito" finished-at="2021-10-03T22:03:30 COT">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at testcases.CasosCarrito.verificarProductos(CasosCarrito.java:110)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at org.testng.Assert.assertTrue(Assert.java:55)
+at testcases.CasosCarrito.verificarProductos(CasosCarrito.java:102)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -65,11 +72,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarProductos -->
-        <test-method status="PASS" signature="cerrarNavegador()[pri:0, instance:testcases.CasosCarrito@16c069df]" name="cerrarNavegador" is-config="true" duration-ms="267" started-at="2021-10-02T23:25:44 COT" finished-at="2021-10-02T23:25:45 COT">
+        <test-method status="PASS" signature="cerrarNavegador()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="cerrarNavegador" is-config="true" duration-ms="424" started-at="2021-10-03T22:03:31 COT" finished-at="2021-10-03T22:03:31 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cerrarNavegador -->
       </class> <!-- testcases.CasosCarrito -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Casos de Prueba Carrito de Compras -->
+  </suite> <!-- Suite -->
 </testng-results>
