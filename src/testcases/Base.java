@@ -19,4 +19,5 @@ public class Base {
 	
 	String mensajeDeVentana;
 	String mensajeCarrito;
+	String totalEnString;
 }

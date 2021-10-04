@@ -13,6 +13,7 @@
           <include name="cerrarNavegador"/>
           <include name="elegirArticulosAzarCarritoCompras"/>
           <include name="verificarProductos"/>
+          <include name="verificarCheckOut"/>
         </methods>
       </class> <!-- testcases.CasosCarrito -->
     </classes>
