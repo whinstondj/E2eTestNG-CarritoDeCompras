@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -17,11 +18,12 @@ import org.testng.asserts.SoftAssert;
 public class CasosCarrito extends Base {
 	
 	@BeforeSuite
-	public void AbrirNavegador() {
+	public void AbrirNavegador(ITestContext context) {
 		navegador.get("http://automationpractice.com/index.php");
 		navegador.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		Dimension driverSize = new Dimension(1170, 700);
 		navegador.manage().window().setSize(driverSize);
+		context.setAttribute("WebDriver", navegador);
 	}
 	
 	@Test
@@ -94,8 +96,10 @@ public class CasosCarrito extends Base {
 		//Codigo para crar dos decimales
 		DecimalFormat df2 = new DecimalFormat("#.00");
 		
-		String totalEnString = String.format("$%s", df2.format(totalProductos));
+		totalEnString = String.format("$%s", df2.format(totalProductos));
 		totalEnString = totalEnString.replace(",", ".");
+		
+		//Assert.assertTrue(false);
 		
 		WebElement ventanaTotal = espera.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/div/div/div/div/div[2]/span[1]")));
 		Assert.assertEquals(navegador.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/div/div/div/div/div[2]/span[1]")).getText(), totalEnString);
@@ -104,12 +108,24 @@ public class CasosCarrito extends Base {
 		
 		SoftAssert validaciones = new SoftAssert();
 		
-		validaciones.assertTrue(false);
+		//validaciones.assertTrue(false);
 		validaciones.assertTrue(true);
 		
-		validaciones.assertAll();
+		//validaciones.assertAll();
 	}
 	
+	@Test(dependsOnMethods= {"verificarProductos"})
+	public void verificarCheckOut() {
+		navegador.findElement(By.xpath("//*[@id=\"button_order_cart\"]")).click();
+		Assert.assertEquals(navegador.getTitle(), "Order - My Store");
+		String primerTitulo = navegador.findElement(By.xpath("//*[@id=\"cart_title\"]")).getText();
+		//SHOPPING-CART SUMMARY
+		primerTitulo = primerTitulo.substring(0, 21);
+		Assert.assertEquals(primerTitulo, "SHOPPING-CART SUMMARY");
+		Assert.assertEquals(navegador.findElement(By.xpath("//*[@id=\"total_price_container\"]")).getText(), totalEnString);
+		navegador.findElement(By.linkText("Proceed to checkout")).click();
+		Assert.assertEquals(navegador.getTitle(), "Login - My Store");
+	}
 	
 	@AfterSuite
 	public void cerrarNavegador() {
