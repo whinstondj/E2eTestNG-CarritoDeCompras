@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import repository.HomePage;
+
 public class Base {
 	WebDriver navegador = new ChromeDriver();
 	WebDriverWait espera = new WebDriverWait(navegador , 20);
@@ -20,4 +22,5 @@ public class Base {
 	String mensajeDeVentana;
 	String mensajeCarrito;
 	String totalEnString;
+	HomePage repoHomePage = new HomePage(navegador);
 }

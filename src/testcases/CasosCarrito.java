@@ -29,8 +29,7 @@ public class CasosCarrito extends Base {
 	@Test
 	public void elegirArticulosAzarCarritoCompras() {
 		Assert.assertEquals(navegador.getTitle(), "My Store");
-		WebElement contenedorDeProductos = navegador.findElement(By.id("homefeatured"));
-		listaDeProductos = contenedorDeProductos.findElements(By.tagName("li"));
+		listaDeProductos = repoHomePage.listaElementosProducto();
 		//System.out.println(listaDeProductos.size());
 		
 		if (listaDeProductos.size()<4) {
@@ -54,15 +53,18 @@ public class CasosCarrito extends Base {
 	@Test(dependsOnMethods={"elegirArticulosAzarCarritoCompras"})
 	public void anadirProductosAlCarrito() {
 		for (int i=0; i < cantidadLista; i++) {			                        
-			String xPathElemento = String.format("//*[@id=\"homefeatured\"]/li[%s]/div/div[2]/div[1]/span", productosAlAzar.get(i));
-			String precioUnitarioDolar = listaDeProductos.get(productosAlAzar.get(i)-1).findElement(By.xpath(xPathElemento)).getText();
+			//String xPathElemento = String.format("//*[@id=\"homefeatured\"]/li[%s]/div/div[2]/div[1]/span", productosAlAzar.get(i));
+			//String precioUnitarioDolar = navegador.findElement(By.xpath(xPathElemento)).getText();
+			repoHomePage.setModifiedXPath(productosAlAzar.get(i).toString());
+			String precioUnitarioDolar = repoHomePage.productoAleatorioElement(repoHomePage.getModifiedXPath()).getText();
 			String precioUnitario = precioUnitarioDolar.replace("$", "");
 			System.out.println(precioUnitario);
 			Double precio = Double.valueOf(precioUnitario);
 			System.out.println("Este es el valor unitario del producto: " + precio);
 			totalProductos += precio;
 			System.out.println("Este es el total de los valores: " + totalProductos);
-			listaDeProductos.get(productosAlAzar.get(i)-1).findElement(By.linkText("Add to cart")).click();
+			//listaDeProductos.get(productosAlAzar.get(i)-1).findElement(By.linkText("Add to cart")).click();
+			repoHomePage.addToCartElement(listaDeProductos.get(productosAlAzar.get(i)-1)).click();
 			
 			if (i==0) {
 				mensajeDeVentana = "There is 1 item in your cart.";
@@ -72,16 +74,16 @@ public class CasosCarrito extends Base {
 				mensajeCarrito = String.format("Cart %s Products", i+1);
 			}
 			
-			WebElement ventanaDeProducto = espera.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2")));
+			WebElement ventanaDeProducto = espera.until(ExpectedConditions.visibilityOf(repoHomePage.ventanaPopUpElement()));
 			
 			//Comparaciones
-			Assert.assertEquals(navegador.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2")).getText(), "Product successfully added to your shopping cart");
+			Assert.assertEquals(repoHomePage.ventanaPopUpElement().getText(), "Product successfully added to your shopping cart");
 			
 			Assert.assertEquals(navegador.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/h2")).getText(), mensajeDeVentana);
 			Assert.assertEquals(navegador.findElement(By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a")).getText(), mensajeCarrito);
 			
 			navegador.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span")).click();
-			Boolean ventanaDesaparecida = espera.until(ExpectedConditions.invisibilityOf(navegador.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[1]/h2"))));
+			Boolean ventanaDesaparecida = espera.until(ExpectedConditions.invisibilityOf(repoHomePage.ventanaPopUpElement()));
 		}
 	}
 	
