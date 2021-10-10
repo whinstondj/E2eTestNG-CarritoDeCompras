@@ -2,43 +2,43 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="37009" started-at="2021-10-05T21:09:52 COT" finished-at="2021-10-05T21:10:29 COT">
+  <suite name="Default suite" duration-ms="40277" started-at="2021-10-09T22:55:55 COT" finished-at="2021-10-09T22:56:35 COT">
     <groups>
     </groups>
-    <test name="Casos de Prueba Carrito de Compras" duration-ms="37009" started-at="2021-10-05T21:09:52 COT" finished-at="2021-10-05T21:10:29 COT">
+    <test name="Default test" duration-ms="40277" started-at="2021-10-09T22:55:55 COT" finished-at="2021-10-09T22:56:35 COT">
       <class name="testcases.CasosCarrito">
-        <test-method status="PASS" signature="AbrirNavegador(org.testng.ITestContext)[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="AbrirNavegador" is-config="true" duration-ms="9427" started-at="2021-10-05T21:09:42 COT" finished-at="2021-10-05T21:09:52 COT">
+        <test-method status="PASS" signature="AbrirNavegador(org.testng.ITestContext)[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="AbrirNavegador" is-config="true" duration-ms="8013" started-at="2021-10-09T22:55:47 COT" finished-at="2021-10-09T22:55:55 COT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@11acdc30]]>
+                <![CDATA[org.testng.TestRunner@38f57b3d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AbrirNavegador -->
-        <test-method status="PASS" signature="elegirArticulosAzarCarritoCompras()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="elegirArticulosAzarCarritoCompras" duration-ms="148" started-at="2021-10-05T21:09:52 COT" finished-at="2021-10-05T21:09:52 COT">
+        <test-method status="PASS" signature="elegirArticulosAzarCarritoCompras()[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="elegirArticulosAzarCarritoCompras" duration-ms="78" started-at="2021-10-09T22:55:55 COT" finished-at="2021-10-09T22:55:55 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- elegirArticulosAzarCarritoCompras -->
-        <test-method status="PASS" signature="anadirProductosAlCarrito()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="anadirProductosAlCarrito" duration-ms="17406" started-at="2021-10-05T21:09:52 COT" depends-on-methods="testcases.CasosCarrito.elegirArticulosAzarCarritoCompras" finished-at="2021-10-05T21:10:09 COT">
+        <test-method status="PASS" signature="anadirProductosAlCarrito()[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="anadirProductosAlCarrito" duration-ms="18705" started-at="2021-10-09T22:55:55 COT" depends-on-methods="testcases.CasosCarrito.elegirArticulosAzarCarritoCompras" finished-at="2021-10-09T22:56:14 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- anadirProductosAlCarrito -->
-        <test-method status="PASS" signature="verificarProductos()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="verificarProductos" duration-ms="941" started-at="2021-10-05T21:10:09 COT" depends-on-methods="testcases.CasosCarrito.anadirProductosAlCarrito" finished-at="2021-10-05T21:10:10 COT">
+        <test-method status="PASS" signature="verificarProductos()[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="verificarProductos" duration-ms="865" started-at="2021-10-09T22:56:14 COT" depends-on-methods="testcases.CasosCarrito.anadirProductosAlCarrito" finished-at="2021-10-09T22:56:15 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarProductos -->
-        <test-method status="PASS" signature="verificarCheckOut()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="verificarCheckOut" duration-ms="18459" started-at="2021-10-05T21:10:10 COT" depends-on-methods="testcases.CasosCarrito.verificarProductos" finished-at="2021-10-05T21:10:29 COT">
+        <test-method status="PASS" signature="verificarCheckOut()[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="verificarCheckOut" duration-ms="20582" started-at="2021-10-09T22:56:15 COT" depends-on-methods="testcases.CasosCarrito.verificarProductos" finished-at="2021-10-09T22:56:35 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarCheckOut -->
-        <test-method status="PASS" signature="cerrarNavegador()[pri:0, instance:testcases.CasosCarrito@2bec854f]" name="cerrarNavegador" is-config="true" duration-ms="236" started-at="2021-10-05T21:10:29 COT" finished-at="2021-10-05T21:10:29 COT">
+        <test-method status="PASS" signature="cerrarNavegador()[pri:0, instance:testcases.CasosCarrito@72ef8d15]" name="cerrarNavegador" is-config="true" duration-ms="222" started-at="2021-10-09T22:56:35 COT" finished-at="2021-10-09T22:56:36 COT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cerrarNavegador -->
       </class> <!-- testcases.CasosCarrito -->
-    </test> <!-- Casos de Prueba Carrito de Compras -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
