@@ -8,8 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import repository.HomePage;
-import repository.LoginPage;
+import repository.HomePageRepository;
+import repository.LoginPageRepository;
 
 public class Base {
 	WebDriver navegador = new ChromeDriver();
@@ -23,6 +23,6 @@ public class Base {
 	String mensajeDeVentana;
 	String mensajeCarrito;
 	String totalEnString;
-	HomePage repoHomePage = new HomePage(navegador);
-	LoginPage repoLoginPage = new LoginPage(navegador);
+	HomePageRepository repoHomePage = new HomePageRepository(navegador);
+	LoginPageRepository repoLoginPage = new LoginPageRepository(navegador);
 }
