@@ -35,6 +35,21 @@ public class HomePage {
 	By mensajeTituloVentana = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/h2");
 	By mensajeTituloCarrito = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
 	By botonContinueShopping = By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span");
+	By cartOptions = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/a");
+	By ventanaTotal = By.xpath("//*[@id=\"header\"]/div[3]/div/div/div[3]/div/div/div/div/div/div[2]/span[1]");
+	By botonCheckOut = By.xpath("//*[@id=\"button_order_cart\"]");
+	
+	public WebElement botonCheckOutElement() {
+		return driver.findElement(botonCheckOut);
+	}
+	
+	public WebElement ventanaTotalElement() {
+		return driver.findElement(ventanaTotal);
+	}
+	
+	public WebElement cartOptionsElements() {
+		return driver.findElement(cartOptions);
+	}
 	
 	public WebElement continueShoppingElement() {
 		return driver.findElement(botonContinueShopping);

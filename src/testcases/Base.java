@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import repository.HomePage;
+import repository.LoginPage;
 
 public class Base {
 	WebDriver navegador = new ChromeDriver();
@@ -23,4 +24,5 @@ public class Base {
 	String mensajeCarrito;
 	String totalEnString;
 	HomePage repoHomePage = new HomePage(navegador);
+	LoginPage repoLoginPage = new LoginPage(navegador);
 }
